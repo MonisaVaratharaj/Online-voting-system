@@ -18,13 +18,14 @@ The PHP Voting System provides a platform where users can log in, view available
 2. Set up a PHP server environment (e.g., XAMPP, WAMP, or any PHP-supported environment. My choice is XAMPP).
 3. Create a new folder within the 'htdocs' directory in your XAMPP(C:\xampp\htdocs) for Windows. Then, place the contents of this repository folder into the newly created folder.(eg.folder name : PHP-VOTING-SYSTEM)
 4. The database schema is provided directly within the project folder. Locate and import the database schema file (e.g., `onlinevotingsystem.sql`) into your phpmyadmin (for XAMPP).
+   
 **4.1. The phpMyAdmin is defaulty have password as '', nothing , but I put password for it as 'root'
 refer the following youtube video to change the password of phpmyadmin 
 https://youtu.be/ZSMRmvIUhdE?si=xfKO92vKIPLmlC2F**
-5. change the username and password in the connect.php (C:\xampp\htdocs\PHP-VOTING-SYSTEM\actions\connect.php), make sure that the database name is same as in connect.php contains (onlinevotingsystem)
-6. Run the application on your local server.
-7. localhost URL  : http://localhost/PHP-VOTING-SYSTEM/index.php
-8. phpmyadmin URL : http://localhost/phpmyadmin/
+6. change the username and password in the connect.php (C:\xampp\htdocs\PHP-VOTING-SYSTEM\actions\connect.php), make sure that the database name is same as in connect.php contains (onlinevotingsystem)
+7. Run the application on your local server.
+8. localhost URL  : http://localhost/PHP-VOTING-SYSTEM/index.php
+9. phpmyadmin URL : http://localhost/phpmyadmin/
 
 
 ## sample users 
