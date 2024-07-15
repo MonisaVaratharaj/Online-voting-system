@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2023 at 04:25 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Jul 15, 2024 at 11:56 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -41,10 +41,8 @@ CREATE TABLE `candidates` (
 --
 
 INSERT INTO `candidates` (`CandidateID`, `UserID`, `cname`, `Photo`, `ElectionID`, `status`) VALUES
-(29, 60280, 'vikkram', '../uploads/vikkram.jpg', 160, 0),
-(30, 62866, 'suresh', '../uploads/suresh.png', 160, 0),
-(31, 31846, 'Vignesh', '../uploads/vignesh.jpg', 160, 0),
-(32, 6237, 'Gladwin A J', '../uploads/gladwin.png', 160, 0);
+(35, 62233, 'candidate1', '../uploads/candidate.png', 162, 0),
+(36, 27457, 'candidate2', '../uploads/candidate2.png', 162, 0);
 
 -- --------------------------------------------------------
 
@@ -66,7 +64,7 @@ CREATE TABLE `elections` (
 --
 
 INSERT INTO `elections` (`ElectionID`, `Title`, `Description`, `Start_Date`, `End_Date`, `status`) VALUES
-(160, 'CLASS REPRESENTATIVE ', 'good class representative leads the class to good path', '2023-12-18', '2023-12-18', 'Ended');
+(162, 'class representative election', 'students need to choose the class representative for class who act as leader ,co-ordinator etc... to the students ', '2024-07-15', '2024-07-16', 'Ongoing');
 
 -- --------------------------------------------------------
 
@@ -86,7 +84,7 @@ CREATE TABLE `positions` (
 --
 
 INSERT INTO `positions` (`PositionID`, `ElectionID`, `Title`, `Description`) VALUES
-(35, 160, 'class rep', 'Some Position Description');
+(37, 162, 'class representative', 'Some Position Description');
 
 -- --------------------------------------------------------
 
@@ -108,11 +106,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`UserID`, `Username`, `Mobile`, `Password`, `Photo`, `Role`) VALUES
-(6237, 'Gladwin A J', '9519519510', '$2y$10$gbXRcToRCKzRbeNb4a/FmOteZ40hKw2HNjIt5Hi5zlzWmGCQhal3G', '../uploads/gladwin.png', 'candidate'),
-(11073, 'Phranav', '7894561230', '$2y$10$yE8IHZLuHSX5CoUUZrrg3efEwvMoS4Jw9h8aH3oVEvnKpexKONfPa', '../uploads/passport-size-photo.jpg', 'voter'),
-(31846, 'Vignesh', '9639639630', '$2y$10$5GCHBr1gn/DCjtPD8CajtOOfb2HVJgK8OEgnLknkhprDOIw/BhG4u', '../uploads/vignesh.jpg', 'candidate'),
-(60280, 'vikkram', '7417417410', '$2y$10$PlRcntVU8nifv5yaG7lMmOy6cp2Yg3FJLfhrUhy/lXXUM7ZJeCBVW', '../uploads/vikkram.jpg', 'candidate'),
-(62866, 'suresh', '8528528520', '$2y$10$Pl1DJwAdkQmcHSr.NySNBeJZGPR1qVuA4fdl7CkOQ2dXII8xEsgdm', '../uploads/suresh.png', 'candidate');
+(2958, 'user3', '3456789012', '$2y$10$OiHQe9wUnzIbek2ZlR./3eQlva/wMoabtKitoQS/MrKGSXaYTAJ8.', '../uploads/voter3.png', 'voter'),
+(27457, 'candidate2', '5678901234', '$2y$10$VgnCheZbA62W1r6tvMZwmuor7MvCzstssW5ozyyCLRhc9omTY0p1y', '../uploads/candidate2.png', 'candidate'),
+(30310, 'user2', '2345678901', '$2y$10$GSWiV7QppI3yghVTsOiJuuRL1zFHQONnIjy4dAv4lDWs/k6yo3s8O', '../uploads/voter2.png', 'voter'),
+(42032, 'user1', '1234567890', '$2y$10$sCe7Cdw0.H6vmtkak4GdvuKUoLZeHuFuMBrw/oG6/uOquHS54Pfaa', '../uploads/voter1.png', 'voter'),
+(62233, 'candidate1', '4567890123', '$2y$10$WBsr1.kuMq/tYmAhPKqC9eMsGXKgDK/aed.EjmzpdsEo6eUU/oCwC', '../uploads/candidate.png', 'candidate');
 
 -- --------------------------------------------------------
 
@@ -133,7 +131,11 @@ CREATE TABLE `votes` (
 --
 
 INSERT INTO `votes` (`VoteID`, `UserID`, `ElectionID`, `CandidateID`, `Timestamp`) VALUES
-(39, 11073, 160, 29, '2023-12-19 05:11:49');
+(1, 42032, 162, 35, '2024-07-15 09:52:42'),
+(2, 30310, 162, 36, '2024-07-15 09:53:51'),
+(3, 2958, 162, 35, '2024-07-15 09:54:11'),
+(4, 62233, 162, 36, '2024-07-15 09:54:31'),
+(5, 27457, 162, 35, '2024-07-15 09:54:56');
 
 --
 -- Indexes for dumped tables
@@ -183,19 +185,19 @@ ALTER TABLE `votes`
 -- AUTO_INCREMENT for table `candidates`
 --
 ALTER TABLE `candidates`
-  MODIFY `CandidateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `CandidateID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `elections`
 --
 ALTER TABLE `elections`
-  MODIFY `ElectionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
+  MODIFY `ElectionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
 
 --
 -- AUTO_INCREMENT for table `positions`
 --
 ALTER TABLE `positions`
-  MODIFY `PositionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `PositionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -207,7 +209,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `votes`
 --
 ALTER TABLE `votes`
-  MODIFY `VoteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `VoteID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
